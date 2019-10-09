@@ -1,0 +1,200 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 806
+  ClientWidth = 698
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 8
+    Top = 80
+    Width = 682
+    Height = 553
+    ActivePage = TabSheet1
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      object DBGrid1: TDBGrid
+        Left = 3
+        Top = 16
+        Width = 510
+        Height = 233
+        DataSource = DataSource1
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBGrid2: TDBGrid
+        Left = 3
+        Top = 304
+        Width = 502
+        Height = 177
+        DataSource = DataSource2
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBLookupListBox2: TDBLookupListBox
+        Left = 536
+        Top = 16
+        Width = 121
+        Height = 121
+        DataField = 'genre'
+        DataSource = DataSource1
+        KeyField = 'genre'
+        ListField = 'genre'
+        ListSource = DataSource3
+        TabOrder = 2
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 168
+        Top = 255
+        Width = 240
+        Height = 25
+        DataSource = DataSource1
+        ConfirmDelete = False
+        TabOrder = 3
+        BeforeAction = DBNavigator1BeforeAction
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+      ImageIndex = 1
+    end
+  end
+  object DBNavigator2: TDBNavigator
+    Left = 180
+    Top = 591
+    Width = 240
+    Height = 25
+    DataSource = DataSource2
+    TabOrder = 1
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\AstDatabases\Gam' +
+      'esV2.mdb;Persist Security Info=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 408
+    Top = 752
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    OnCalcFields = ADOTable1CalcFields
+    TableName = 'main'
+    Left = 472
+    Top = 744
+    object ADOTable1id: TSmallintField
+      FieldName = 'id'
+    end
+    object ADOTable1game: TWideStringField
+      FieldName = 'game'
+    end
+    object ADOTable1multiplayer: TBooleanField
+      FieldName = 'multiplayer'
+    end
+    object ADOTable1release: TDateTimeField
+      FieldName = 'release'
+    end
+    object ADOTable1budget: TIntegerField
+      FieldName = 'budget'
+    end
+    object ADOTable1edition: TIntegerField
+      FieldName = 'edition'
+    end
+    object ADOTable1genre: TWideStringField
+      FieldName = 'genre'
+      Size = 10
+    end
+    object ADOTable1cost: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'cost'
+      Calculated = True
+    end
+  end
+  object ADOTable2: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    IndexFieldNames = 'gameID'
+    MasterFields = 'id'
+    MasterSource = DataSource1
+    TableName = 'heroes'
+    Left = 472
+    Top = 688
+    object ADOTable2id: TSmallintField
+      FieldName = 'id'
+    end
+    object ADOTable2heroName: TWideStringField
+      FieldName = 'heroName'
+      Size = 15
+    end
+    object ADOTable2gameID: TSmallintField
+      FieldName = 'gameID'
+    end
+    object ADOTable2playable: TBooleanField
+      FieldName = 'playable'
+    end
+    object ADOTable2age: TWordField
+      FieldName = 'age'
+    end
+    object ADOTable2equipSloats: TWordField
+      FieldName = 'equipSloats'
+    end
+    object ADOTable2birthDate: TDateTimeField
+      FieldName = 'birthDate'
+    end
+  end
+  object ADOTable3: TADOTable
+    Active = True
+    Connection = ADOConnection2
+    CursorType = ctStatic
+    EnableBCD = False
+    TableName = 'links'
+    Left = 472
+    Top = 648
+  end
+  object ADOConnection2: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\AstDatabases\Gam' +
+      'esV2.mdb;Persist Security Info=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 400
+    Top = 688
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 592
+    Top = 752
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOTable2
+    Left = 592
+    Top = 696
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOTable3
+    Left = 592
+    Top = 648
+  end
+end

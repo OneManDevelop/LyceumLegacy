@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.129,D:\Student Docs\RAD Studio\Projects\Unit1.dfm=D:\Student Docs\RAD Studio\Projects\FirstBDmanager.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.692,=D:\Student Docs\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.129,D:\Student Docs\RAD Studio\Projects\Unit1.pas=D:\Student Docs\RAD Studio\Projects\FirstBDmanager.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.497,D:\Student Docs\RAD Studio\Projects\FirstBDmanager.dfm=D:\AstCases\FirstBDmanager.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.323,C:\Users\win7\Desktop\info\DBdelphiManagers\Project1.dproj=C:\Users\win7\Desktop\info\Paged Manager\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.355,D:\Student Docs\RAD Studio\Projects\Project1.dproj=D:\AstCases\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.497,D:\Student Docs\RAD Studio\Projects\FirstBDmanager.pas=D:\AstCases\FirstBDmanager.pas</Transaction>
+  </Transactions>
+</BorlandProject>

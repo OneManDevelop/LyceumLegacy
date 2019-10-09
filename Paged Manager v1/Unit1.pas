@@ -1,0 +1,56 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Data.DB, Data.Win.ADODB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.Imaging.pngimage;
+
+type
+  TPagedManger = class(TForm)
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    ADOTable2: TADOTable;
+    DataSource1: TDataSource;
+    DataSource2: TDataSource;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    DBNavigator2: TDBNavigator;
+    DBNavigator1: TDBNavigator;
+    DBLookupListBox1: TDBLookupListBox;
+    ADOTable3: TADOTable;
+    DataSource3: TDataSource;
+    Image1: TImage;
+    ADOTable1id: TSmallintField;
+    ADOTable1game: TWideStringField;
+    ADOTable1multiplayer: TBooleanField;
+    ADOTable1release: TDateTimeField;
+    ADOTable1budget: TIntegerField;
+    ADOTable1edition: TIntegerField;
+    ADOTable1genre: TWideStringField;
+    ADOTable2id: TSmallintField;
+    ADOTable2heroName: TWideStringField;
+    ADOTable2gameID: TSmallintField;
+    ADOTable2playable: TBooleanField;
+    ADOTable2age: TWordField;
+    ADOTable2equipSloats: TWordField;
+    ADOTable2birthDate: TDateTimeField;
+    StatusBar1: TStatusBar;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PagedManger: TPagedManger;
+
+implementation
+
+{$R *.dfm}
+
+end.

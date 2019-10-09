@@ -1,0 +1,142 @@
+object PagedManger: TPagedManger
+  Left = 0
+  Top = 0
+  Caption = 'PagedManger'
+  ClientHeight = 722
+  ClientWidth = 989
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 8
+    Top = 8
+    Width = 953
+    Height = 481
+    ActivePage = TabSheet1
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ExplicitLeft = 0
+      ExplicitWidth = 849
+      ExplicitHeight = 333
+      object DBGrid1: TDBGrid
+        Left = 200
+        Top = 0
+        Width = 742
+        Height = 409
+        DataSource = DataSource1
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBNavigator2: TDBNavigator
+        Left = 464
+        Top = 425
+        Width = 240
+        Height = 25
+        DataSource = DataSource1
+        TabOrder = 1
+      end
+      object DBLookupListBox1: TDBLookupListBox
+        Left = 16
+        Top = 16
+        Width = 161
+        Height = 121
+        DataField = 'genre'
+        DataSource = DataSource1
+        KeyField = 'genre'
+        ListField = 'genre'
+        ListSource = DataSource3
+        TabOrder = 2
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+      ImageIndex = 1
+      ExplicitWidth = 849
+      ExplicitHeight = 333
+      object DBGrid2: TDBGrid
+        Left = 216
+        Top = 3
+        Width = 569
+        Height = 382
+        DataSource = DataSource2
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 408
+        Top = 416
+        Width = 240
+        Height = 25
+        DataSource = DataSource2
+        TabOrder = 1
+      end
+    end
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\AstDatabases\Gam' +
+      'esV2.mdb;Persist Security Info=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 688
+    Top = 640
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'main'
+    Left = 776
+    Top = 640
+  end
+  object ADOTable2: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    IndexName = 'mainheroes'
+    MasterFields = 'id'
+    MasterSource = DataSource1
+    TableName = 'heroes'
+    Left = 784
+    Top = 568
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 864
+    Top = 640
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOTable2
+    Left = 864
+    Top = 568
+  end
+  object ADOTable3: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'links'
+    Left = 560
+    Top = 640
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOTable3
+    Left = 488
+    Top = 640
+  end
+end
